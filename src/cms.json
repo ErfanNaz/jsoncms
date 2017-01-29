@@ -1,0 +1,75 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "minLength": 2,
+                "description": "Name or alias"
+            },
+            "content": {
+                "type": "string",
+                "format": "html"
+            },
+            "sex": {
+                "type": "string",
+                "enum": [
+                    "man",
+                    "woman"
+                ]
+            },
+            "description": {
+                "type": "string"
+            },
+            "birthday": {
+                "type": "string",
+                "title": "date of your birthday",
+                "format": "date"
+            },
+            "books": {
+                "type": "array",
+                "title": "readed books",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "title": {
+                            "title": "Title of the Book",
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "pages": {
+                            "type": "integer",
+                            "title": "How many pages the book has"
+                        },
+                        "datei": {
+                            "type": "string",
+                            "format": "file"
+                        },
+                        "author": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "title",
+                        "pages"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "name",
+            "sex",
+            "bookings"
+        ]
+    },
+    "form": [
+        "name",
+        "*",
+        {
+            "key": "description",
+            "type": "textarea",
+            "placeholder": "Make a comment"
+        }
+    ],
+    "uploads": []
+}

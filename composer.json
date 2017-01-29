@@ -1,0 +1,13 @@
+{
+    "name": "erfan/json-cms",
+    "description": "simple cms for simple webpages",
+    "authors": [
+        {
+            "name": "Erfan",
+            "email": "erfan.nazm@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.4"
+    }
+}
