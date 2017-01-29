@@ -10,7 +10,7 @@ It is the fastest way to create a simple Webpage with dynamic Content. There is 
 
 # How to use it?
 
-You can download the dist Folder and use it. You have to change the Admin Password in the "backend/index.php" File.
+You can download the zip file (JsonCMS.zip) and use it or Just run composer install and then gulp dist to build the newest version of JSON CMS. You have to change the Admin Password in the "backend/index.php" File.
 Now you can manipulate the "backend/schema.json" File for all kind of Data you need. The Schema has to be compatible with the [Json schema v4](http://json-schema.org/) Standard.
 
 ## example
