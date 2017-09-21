@@ -12,10 +12,9 @@ angular.module("json-cms-app").factory("connection-factory", ["$http", "sha-fact
     password = sha.generate(pw);
     let params = { headers: { 'Authorization': password } };
     return $http.get("restful/index.php/login", params)
-      .success(() => {
+      .then(() => {
         connection.isLoggedIn = true;
-      })
-      .error(() => {
+      }, () => {
         connection.logout();
       });
   };

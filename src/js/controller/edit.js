@@ -14,8 +14,7 @@ angular.module("json-cms-app").controller("edit-controller", ["$rootScope", "$lo
     rootScope.$broadcast('schemaFormValidate');
     if (form.$valid) {
       connection.save(self.model)
-        .success(onSaveSuccess)
-        .error(onSaveError);
+        .then(onSaveSuccess, onSaveError);
     }
   };
 
@@ -35,22 +34,17 @@ angular.module("json-cms-app").controller("edit-controller", ["$rootScope", "$lo
   this.uploadFile = function () {
     if (self.file) {
       connection.uploadFile(self.file, self.uploadFilename)
-        .success(onSuccessFileUpload)
-        .error(onSaveError);
+        .then(onSuccessFileUpload, onSaveError);
     }
   };
 
   this.deleteFile = function (fileUrl) {
     connection.deleteFile(fileUrl)
-      .success(function (response) {
-        refreshUploadList(response.uploads);
-        onSaveSuccess(response);
-      })
-      .error(onSaveError);
+      .then(onSuccessFileUpload, onSaveError);
   };
 
-  function onSaveSuccess(data) {
-    Notification.success(data.message);
+  function onSaveSuccess(response) {
+    Notification.success(response.data.message);
   }
 
   function onSaveError(data) {
@@ -58,8 +52,9 @@ angular.module("json-cms-app").controller("edit-controller", ["$rootScope", "$lo
   }
 
   function onSuccessFileUpload(response) {
-    refreshUploadList(response.uploads);
-    onSaveSuccess(response);
+    const data = response.data;
+    refreshUploadList(data.uploads);
+    onSaveSuccess(data);
   }
 
   function refreshUploadList(uploads) {

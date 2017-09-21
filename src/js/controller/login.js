@@ -8,8 +8,7 @@ angular.module("json-cms-app").controller("login-controller", ["$location", "con
 
   this.login = function () {
     connection.login(self.username + self.password)
-      .success(onSuccess)
-      .error(onError);
+      .then(onSuccess, onError);
   };
 
   function onSuccess() {
