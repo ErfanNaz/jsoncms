@@ -7,10 +7,6 @@
                 "minLength": 2,
                 "description": "Name or alias"
             },
-            "content": {
-                "type": "string",
-                "format": "html"
-            },
             "sex": {
                 "type": "string",
                 "enum": [
@@ -28,14 +24,13 @@
             },
             "books": {
                 "type": "array",
-                "title": "readed books",
+                "title": "written books",
                 "items": {
                     "type": "object",
                     "properties": {
                         "title": {
                             "title": "Title of the Book",
-                            "type": "string",
-                            "format": "date"
+                            "type": "string"
                         },
                         "pages": {
                             "type": "integer",
@@ -44,9 +39,6 @@
                         "datei": {
                             "type": "string",
                             "format": "file"
-                        },
-                        "author": {
-                            "type": "string"
                         }
                     },
                     "required": [
@@ -63,13 +55,7 @@
         ]
     },
     "form": [
-        "name",
-        "*",
-        {
-            "key": "description",
-            "type": "textarea",
-            "placeholder": "Make a comment"
-        }
+        "*"
     ],
     "uploads": []
 }

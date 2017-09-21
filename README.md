@@ -4,9 +4,9 @@ With json cms you can build your Webpages and get your Data from a single json F
 It is up to you if you want to use PHP or simple html with javascript for the Webpage, because the Content of your Webpage can be managed by JSON CMS.
 It is the fastest way to create a simple Webpage with dynamic Content. There is no requirement for a Database.
 
-## DEMO
+## Json CMS UI
 
-[json cms](http://www.zentoo.de)
+![image of the cms](JsonCMS.png)
 
 # How to use it?
 
@@ -51,14 +51,13 @@ Now you can manipulate the "backend/schema.json" File for all kind of Data you n
         },
         "books": {
             "type": "array",
-            "title": "readed books",
+            "title": "written books",
             "items": {
                 "type": "object",
                 "properties": {
                     "title": {
                         "title": "Title of the Book",
-                        "type": "string",
-                        "format": "date"
+                        "type": "string"
                     },
                     "pages": {
                         "type": "integer",
