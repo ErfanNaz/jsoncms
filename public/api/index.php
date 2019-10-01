@@ -57,7 +57,7 @@ $app->post('/upload', function (Request $request, Response $response) use ($json
             if (!file_exists($uloadFolderPath)) {
                 mkdir($uloadFolderPath);
             }
-            
+
             if(ini_get('date.timezone') == ""){
                 date_default_timezone_set("UTC");
             }
@@ -76,7 +76,7 @@ $app->post('/upload', function (Request $request, Response $response) use ($json
                     $fileArrayObject = ["name" => $filename,
                                         "url" => $moveToUrl,
                                         "mimetype" => $file->getClientMediaType(),
-                                        "size" => $file->getSize()]; 
+                                        "size" => $file->getSize()];
                     array_push($cmsJson["uploads"],$fileArrayObject);
                     file_put_contents($cmsJsonPath, json_encode($cmsJson, JSON_PRETTY_PRINT));
 
@@ -118,7 +118,7 @@ $app->delete('/upload', function (Request $request, Response $response) use ($js
                 $response = $response->withJson(['message' => "file deleted", 'uploads' => json_encode($cmsJson["uploads"])], 200);
             } else {
                 $response = $response->withJson(['message' => "file not found"], 400);
-            }            
+            }
         } else {
             $response = $response->withJson(['message' => "file not found"], 400);
         }

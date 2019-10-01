@@ -8,10 +8,11 @@ import './App.css';
 const App: React.FC = () => {
   return (
     <Router>
+      <Navigation></Navigation>
       <div>
-        <Navigation></Navigation>
         <Route exact path="/login" component={Login} />
         <Route exact path="/edit" component={Edit} />
+        <Route exact path="/" redirectTo="/login" />
       </div>
     </Router>
   );
