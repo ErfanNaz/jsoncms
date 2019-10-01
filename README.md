@@ -80,7 +80,7 @@ Now you can manipulate the "backend/schema.json" File for all kind of Data you n
 
 ```
 
-# Contributer
+# DEVELOPER
 
 ## Available Scripts
 
