@@ -10,7 +10,7 @@
     "dist": "gulp dist",
     "php-server": "cd dist && php -S localhost:3000",
     "zip": "gulp zip",
-    "start": "gulp dist && gulp watch",
+    "start": "gulp dist && gulp watch & npm run php-server",
     "postinstall": "npm run bower-install & npm run composer-install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
