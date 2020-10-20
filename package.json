@@ -34,6 +34,6 @@
     "gulp-watch": "^4.3.11",
     "gulp-zip": "^4.0.0",
     "jshint": "^2.9.5",
-    "node-sass": "^4.5.3"
+    "node-sass": "^4.13.1"
   }
 }
